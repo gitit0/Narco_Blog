@@ -89,6 +89,38 @@
             margin-bottom: 40px;
         }
 
+        /* ------------------------------------------------ */
+/* Basis-Einstellungen für große Bildschirme (Optional) */
+/* ------------------------------------------------ */
+.main-title {
+    /* Beispiel: Große Schriftgröße für Desktop */
+    font-size: 3em; 
+    /* Wichtig: Sicherstellen, dass der Text umbricht und nicht überläuft */
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
+}
+
+/* ------------------------------------------------ */
+/* MEDIA QUERY: Anpassung für Handys (Bildschirme kleiner als 600px) */
+/* ------------------------------------------------ */
+@media (max-width: 600px) {
+    
+    .main-title {
+        /* 1. Schriftgröße radikal reduzieren */
+        /* Reduziere die Größe auf einen Wert, der umbricht und passt */
+        font-size: 1.5em; /* Oder 24px, je nachdem, was passt */
+        line-height: 1.1; /* Engerer Zeilenabstand für bessere Kompaktheit */
+        
+        /* 2. Horizontalen Überlauf verhindern (falls er an den Rändern hängt) */
+        /* Füge etwas horizontalen Innenabstand hinzu (optional) */
+        padding: 0 15px; 
+        
+        /* 3. Sicherstellen, dass er sich an die Elternbreite hält */
+        /* Falls der Titel über das Bild ragt, liegt es oft daran, dass der Container des Bildes nicht 100% der Breite einnimmt. */
+        width: 100%; 
+        box-sizing: border-box; 
+    }
+}
         .main-title {
             font-size: 4em; 
             color: peachpuff;
@@ -167,12 +199,12 @@
        <img src="pics/Narco_Logo.PNG" width="70px" height="40px" alt="Firmenlogo" class="logo">
         <nav class="nav-menu">
             <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/#vision" data-page="vision" class="nav-link">Vision</a></li>
-    <li><a href="/#themen" data-page="themen" class="nav-link">Themen</a></li>
-    <li><a href="/#blog" data-page="blog" class="nav-link">Blog</a></li>
-    <li><a href="/#about" data-page="about" class="nav-link">Über mich</a></li>
-    </ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#vision" data-page="vision" class="nav-link">Vision</a></li>
+                <li><a href="index.html#themen" data-page="themen" class="nav-link">Themen</a></li>
+                <li><a href="index.html#blog" data-page="blog" class="nav-link">Blog</a></li>
+                <li><a href="index.html#about" data-page="ablut" class="nav-link">Über mich</a></li>
+            </ul>
         </nav>
     </header>
 <div class="header-image-container">
@@ -211,6 +243,7 @@ Der Prozess beginnt im Gehirn, genauer gesagt im Hypothalamus, der die Hypothala
             </section>
 
         </article>
+        
 
     </main>
 
