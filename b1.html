@@ -28,35 +28,20 @@
         }
 
         /* ------------------------------------- */
-        /* Navigationsleiste (Menü oben rechts)  */
+        /* Navigationsleiste (Menü oben rechts)  */
         /* ------------------------------------- */
         .navbar {
             background: #1a202c; 
             padding: 15px 5%;
             font-size: 1.125rem;
-             font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif;
             display: flex;
             justify-content: space-between; /* Logo links, Menü rechts */
             align-items: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         }
-        @media (max-width: 768px) {
-    
-    /* 1. Desktop-Menü ausblenden, wenn das Hamburger-Menü erscheint */
-    .nav-menu {
-        display: none !important; 
-    }
-}
-
-        /* HINWEIS: .h1 ist unnötig, da H1 bereits über .main-title gestylt wird */
-        /* .h1 { font-size: 30px; } */ 
-
-        .logo {
-            font-size: 1.5em;
-            font-weight: 700;
-            color: #fff;
-        }
-
+        
+        /* Desktop Menü Listen-Styling */
         .nav-menu ul {
             list-style: none;
             display: flex;
@@ -75,10 +60,79 @@
         .nav-menu a:hover, .nav-menu a.active {
             color: peachpuff;
         }
-
+        
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+        }
 
         /* ------------------------------------- */
-        /* Header Bild und Titel (Mitte, Groß)   */
+        /* NEU: CSS für das Hamburger-Icon */
+        /* ------------------------------------- */
+        .hamburger-toggle {
+            display: none; /* Standardmäßig auf Desktop ausgeblendet */
+            background: none;
+            border: none;
+            font-size: 2em;
+            color: #fff;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        /* ------------------------------------- */
+        /* KORRIGIERT: Mobil-Menü-Liste */
+        /* ------------------------------------- */
+        .nav-list-mobile {
+            display: none; /* Standardmäßig ausgeblendet */
+            flex-direction: column;
+            align-items: center;
+            
+            /* Positionierung für Vollbild-Menü */
+            position: fixed; 
+            top: 0; 
+            height: 100vh;
+            left: 0; 
+            width: 100%; 
+            z-index: 999; 
+            background-color: rgba(0, 0, 0, 0.95); /* Leicht dunkler als Header */
+            padding-top: 80px; /* Platz für den Header/Logo lassen */
+            padding-bottom: 1rem;
+        }
+        
+        .nav-list-mobile.active {
+            display: flex; /* Zeigt das Menü an, wenn aktiv */
+        }
+        
+        .nav-list-mobile li {
+            margin: 15px 0;
+            list-style: none;
+        }
+
+        .nav-list-mobile a {
+            color: peachpuff;
+            font-size: 1.5em;
+            padding: 10px 0;
+        }
+        
+        /* ------------------------------------- */
+        /* MEDIA QUERY: Sichtbarkeit regeln (ab 768px wird umgeschaltet) */
+        /* ------------------------------------- */
+        @media (max-width: 768px) {
+            
+            /* 1. Desktop-Menü verstecken */
+            .nav-menu {
+                display: none !important; 
+            }
+            
+            /* 2. Hamburger-Icon anzeigen */
+            .hamburger-toggle {
+                display: block; 
+            }
+        }
+
+        /* ------------------------------------- */
+        /* Header Bild und Titel (Mitte, Groß)   */
         /* ------------------------------------- */
         .header-image-container {
             height: 400px;
@@ -90,141 +144,50 @@
             background-size: cover;
             display: flex;
             justify-content: center;
-             font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins', sans-serif;
             align-items: center;
             text-align: center;
             margin-bottom: 40px;
         }
-        /* Ausgeblendete Navigationsliste für mobile Ansicht */
-/* ------------------------------------- */
-/* NEU: CSS für das Hamburger-Icon */
-/* ------------------------------------- */
-.hamburger-toggle {
-    display: none; /* Standardmäßig auf Desktop ausgeblendet */
-    background: none;
-    border: none;
-    font-size: 2em;
-    color: #fff;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-
-/* ------------------------------------- */
-/* KORRIGIERT: Mobil-Menü-Liste (position: fixed ist gut) */
-/* ------------------------------------- */
-.nav-list-mobile {
-    display: none; /* Standardmäßig ausgeblendet */
-    flex-direction: column;
-    align-items: center;
-    
-    position: fixed; /* Richtig, um es am Viewport zu fixieren */
-    top: 0; 
-    height: 100vh;
-    left: 0; 
-    width: 100%; 
-    z-index: 999; 
-    background-color: rgba(0, 0, 0, 0.9);
-    padding-top: 60px; /* Platz für den Header lassen */
-    padding-bottom: 1rem;
-}
-
-
-/* ------------------------------------- */
-/* MEDIA QUERY: Sichtbarkeit regeln */
-/* ------------------------------------- */
-@media (max-width: 768px) {
-    
-    /* 1. Desktop-Menü verstecken */
-    .nav-menu {
-        display: none !important; 
-    }
-    
-    /* 2. Hamburger-Icon anzeigen */
-    .hamburger-toggle {
-        display: block; 
-    }
-    
-    /* *HINWEIS*: .nav-list-mobile bleibt 'display: none', 
-       bis es durch JavaScript auf .active gesetzt wird. */
-}
-
-
-
-/* Beispiel für das Eltern-Element deines .nav-list-mobile */
-.main-header { 
-    position: relative; /* MUSS gesetzt sein, damit sich das absolute Menü korrekt bezieht! */
-    width: 100%;
-    /* ... weitere Styles ... */
-}
-
-.nav-list-mobile.active {
-    display: flex; /* Zeigt das Menü an, wenn aktiv */
-}
-
-/* Fade-in Animation für Seitenwechsel */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
+        
         /* ------------------------------------------------ */
-/* Basis-Einstellungen für große Bildschirme (Optional) */
-/* ------------------------------------------------ */
-.main-title {
-    /* Beispiel: Große Schriftgröße für Desktop */
-    font-size: 3em; 
-    /* Wichtig: Sicherstellen, dass der Text umbricht und nicht überläuft */
-    word-wrap: break-word; 
-    overflow-wrap: break-word;
-}
-
-/* ------------------------------------------------ */
-/* MEDIA QUERY: Anpassung für Handys (Bildschirme kleiner als 600px) */
-/* ------------------------------------------------ */
-@media (max-width: 600px) {
-    
-    .main-title {
-        /* 1. Schriftgröße radikal reduzieren */
-        /* Reduziere die Größe auf einen Wert, der umbricht und passt */
-        font-size: 1.5em; /* Oder 24px, je nachdem, was passt */
-        line-height: 1.1; /* Engerer Zeilenabstand für bessere Kompaktheit */
-        
-        /* 2. Horizontalen Überlauf verhindern (falls er an den Rändern hängt) */
-        /* Füge etwas horizontalen Innenabstand hinzu (optional) */
-        padding: 0 15px; 
-        
-        /* 3. Sicherstellen, dass er sich an die Elternbreite hält */
-        /* Falls der Titel über das Bild ragt, liegt es oft daran, dass der Container des Bildes nicht 100% der Breite einnimmt. */
-        width: 100%; 
-        box-sizing: border-box; 
-    }
-}
+        /* Schriftgrößen-Anpassung für main-title */
+        /* ------------------------------------------------ */
         .main-title {
             font-size: 4em; 
             color: peachpuff;
             font-family: 'Poppins', sans-serif;
             padding: 0 20px;
             font-weight: 900; 
-            
+            word-wrap: break-word; 
+            overflow-wrap: break-word;
         }
 
-
-        /* ------------------------------------- */
-        /* Blog Post Styling (Mittig & Blocksatz)*/
-        /* ------------------------------------- */
+        @media (max-width: 600px) {
+            .main-title {
+                font-size: 1.8em; /* Kleinere Schriftgröße für Handys */
+                line-height: 1.1; 
+                padding: 0 15px; 
+            }
+            /* Korrektur für h2 in Datenschutzerklärung (siehe frühere Konversation) */
+            .section-title {
+                font-size: 1.8em;
+            }
+        }
+        /* ... (Rest der CSS-Styles) ... */
+        
         .blog-container {
             width: auto; 
-            margin: 30px auto; /* Zentriert den Container */
+            margin: 30px auto; 
             padding: 0 20px;
-            max-width: 900px; /* HINZUFÜGT: Begrenzt die Breite für bessere Lesbarkeit */
+            max-width: 900px; 
         }
 
         .blog-post {
             background: #1a202c; 
             padding: 40px;
             border-radius: 8px;
-            text-align: center; /* Zentriert den gesamten Inhalt */
+            text-align: center; 
         }
 
         .post-meta {
@@ -237,15 +200,13 @@
         }
 
         .post-content {
-            /* Stellt sicher, dass der Text linksbündig oder Blocksatz ist */
-            display: block; /* ÄNDERUNG: 'inline-block' ist hier nicht nötig, 'block' ist sauberer */
+            display: block; 
             max-width: 100%;
             text-align: left; 
         }
 
         .post-content p {
             margin-bottom: 25px;
-            /* Blocksatz */
             text-align: justify; 
         }
 
@@ -261,7 +222,7 @@
         }
 
         /* ------------------------------------- */
-        /* Footer                                */
+        /* Footer                                */
         /* ------------------------------------- */
         footer {
             text-align: center;
@@ -275,11 +236,13 @@
 <body>
 
     <header class="navbar">
-       <img src="pics/Narco_Logo.PNG" width="70px" height="40px" alt="Firmenlogo" class="logo">
+        <img src="pics/Narco_Logo.PNG" width="70px" height="40px" alt="Firmenlogo" class="logo">
+        
         <button class="hamburger-toggle" id="hamburger-toggle">
-        &#9776; </button>
-       
-       <nav class="nav-menu">
+            &#9776; 
+        </button>
+        
+        <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#vision" data-page="vision" class="nav-link">Vision</a></li>
@@ -287,25 +250,25 @@
                 <li><a href="index.html#blog" data-page="blog" class="nav-link">Blog</a></li>
                 <li><a href="index.html#about" data-page="ablut" class="nav-link">Über mich</a></li>
             </ul>
-              <!-- Mobile Navigation (standardmäßig ausgeblendet) -->
-            <ul class="nav-list-mobile" id="nav-list-mobile">
-                <li><a href="#home" data-page="home" class="nav-link">Start</a></li>
-                <li><a href="#vision" data-page="vision" class="nav-link">Vision</a></li>
-                <li><a href="#themen" data-page="themen" class="nav-link">Themen</a></li>
-                <li><a href="#blog" data-page="blog" class="nav-link">Blog</a></li>
-                <li><a href="#about" data-page="about" class="nav-link">Über mich</a></li>
-            </ul>
         </nav>
+        
+        <ul class="nav-list-mobile" id="nav-list-mobile">
+            <li><a href="#home" data-page="home" class="nav-link">Start</a></li>
+            <li><a href="#vision" data-page="vision" class="nav-link">Vision</a></li>
+            <li><a href="#themen" data-page="themen" class="nav-link">Themen</a></li>
+            <li><a href="#blog" data-page="blog" class="nav-link">Blog</a></li>
+            <li><a href="#about" data-page="about" class="nav-link">Über mich</a></li>
+        </ul>
+        
     </header>
-<div class="header-image-container">
+    <div class="header-image-container">
         <h1 class="main-title">Mission Mini-Pausen</h1>
     </div>
 
     <main class="blog-container">
 
         <article class="blog-post">
-
-            <p class="post-meta">
+        <p class="post-meta">
                 Veröffentlicht am <time datetime="2025-10-03">05. November 2025</time> | Mind
             </p>
 
@@ -334,13 +297,12 @@ Der Prozess beginnt im Gehirn, genauer gesagt im Hypothalamus, der die Hypothala
 
         </article>
         
-
     </main>
     <script>
-    document.getElementById('hamburger-toggle').addEventListener('click', function() {
-        var mobileMenu = document.getElementById('nav-list-mobile');
-        mobileMenu.classList.toggle('active');
-    });
-</script>
+        document.getElementById('hamburger-toggle').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('nav-list-mobile');
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
