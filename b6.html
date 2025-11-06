@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braingain – What fires together wires together  </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Dunkler Hintergrund und Poppins-Schriftart */
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8; 
+            background-color: #1a202c; 
+            color: #e0e0e0; 
+        }
+
+        a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+
+        /* ------------------------------------- */
+        /* Navigationsleiste (Menü oben rechts)  */
+        /* ------------------------------------- */
+        .navbar {
+            background: #1a202c; 
+            padding: 15px 5%;
+            font-size: 1.125rem;
+             font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: space-between; /* Logo links, Menü rechts */
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* HINWEIS: .h1 ist unnötig, da H1 bereits über .main-title gestylt wird */
+        /* .h1 { font-size: 30px; } */ 
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 20px;
+        }
+
+        .nav-menu a {
+            color: #ccc;
+            font-weight: 400;
+            padding: 5px 10px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: plum;
+        }
+
+
+        /* ------------------------------------- */
+        /* Header Bild und Titel (Mitte, Groß)   */
+        /* ------------------------------------- */
+        .header-image-container {
+            height: 400px;
+            background: 
+                /* Überlagerung: Dunkelt das Bild ab (Schwarz, 40% Deckkraft) */
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                /* !!! Bildpfad hier anpassen !!! */
+                url('pics/b6.jpg') center center no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+             font-family: 'Poppins', sans-serif;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .main-title {
+            font-size: 4em; 
+            color: plum;
+            font-family: 'Poppins', sans-serif;
+            padding: 0 20px;
+            font-weight: 900; 
+            
+        }
+
+
+        /* ------------------------------------- */
+        /* Blog Post Styling (Mittig & Blocksatz)*/
+        /* ------------------------------------- */
+        .blog-container {
+            width: auto; 
+            margin: 30px auto; /* Zentriert den Container */
+            padding: 0 20px;
+            max-width: 900px; /* HINZUFÜGT: Begrenzt die Breite für bessere Lesbarkeit */
+        }
+
+        .blog-post {
+            background: #1a202c; 
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center; /* Zentriert den gesamten Inhalt */
+        }
+
+        .post-meta {
+            color: #999;
+            margin-bottom: 30px;
+            font-style: italic;
+            border-bottom: 1px solid #3a3a3a;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .post-content {
+            /* Stellt sicher, dass der Text linksbündig oder Blocksatz ist */
+            display: block; /* ÄNDERUNG: 'inline-block' ist hier nicht nötig, 'block' ist sauberer */
+            max-width: 100%;
+            text-align: left; 
+        }
+
+        .post-content p {
+            margin-bottom: 25px;
+            /* Blocksatz */
+            text-align: justify; 
+        }
+
+        .post-content h2 {
+            color: plum;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            text-align: center; 
+        }
+
+        .post-content ul {
+            margin: 20px 0 20px 20px;
+        }
+
+        /* ------------------------------------- */
+        /* Footer                                */
+        /* ------------------------------------- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a202c;
+            color: #999;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+       <img src="pics/Narco_Logo.PNG" width="70px" height="40px" alt="Firmenlogo" class="logo">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html #vision" data-page="vision" class="nav-link">Vision</a></li>
+                <li><a href="index.html #themen" data-page="themen" class="nav-link">Themen</a></li>
+                <li><a href="index.html #blog" data-page="blog" class="nav-link">Blog</a></li>
+                <li><a href="index.html #about" data-page="ablut" class="nav-link">Über mich</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="header-image-container">
+        <h1 class="main-title">Braingain – What fires together wires together  </h1>
+    </div>
+
+    <main class="blog-container">
+
+        <article class="blog-post">
+
+            <p class="post-meta">
+                Veröffentlicht am <time datetime="2025-10-03">14. Oktober 2025</time> | Neuro
+            </p>
+
+            <section class="post-content">
+                <h2>Ausgangslage</h2>
+                <p>Dass wir in Fitnessstudios gehen, um unsere Astralkörper zu formen oder uns an den Wochenenden in Longruns üben, um die Fettverbrennung zu aktivieren, sind keine Neuigkeiten. Sport verbrennt Energie und regt das Muskelwachstum an. Die Folge ist (soweit die Komponente Ernährung adequat angepasst wird) ein sichtbares physisches Ergebnis. Weniger physisch sichtbar hingegen sind die Gains, welche wir in unserem Hirn zulegen, wenn wir dieses Trainieren. Zwar nicht auf der Langhantelbank, doch durch kognitive Herausforderung, können wir unseren glibbrigen Muskel unter der Schädeldecke ordentlich in Form bringen. Ähnlich wie Gymbros (oder -girls) sich gegenseitig zu Höchstleistungen anspornen und wachsen, können dies auch unsere Neuronen im Hirn. Je öfter wir unsere neuronalen Verbindungen aktivieren, desto stärker und schneller werden diese. What fires together, wires together.</p>
+                    <div style="text-align: center;"> <img 
+        src="pics/b6_1.jpg" 
+        alt="Kreativität"
+        style="
+            max-width: 25%; 
+            height: auto; 
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto;
+        ">
+</div>   
+                
+                <h2>Problem</h2>
+                <p>Leider beobachtet man immer häufiger Menschen, die sich in ihrem Wachstum selbst beschränken. Sei es in der Schule, der Universität oder im Arbeitsleben, es gibt sie überall die wachstumsgehinderten Passivlebenden. Sie nehmen passiv am Leben teil, lassen sich vollends durch externe Umstände lenken und geben ihr Schicksal ebenfalls in äußere Einflüsse. Dem Wachstum sind sie sich auch nicht bewusst, denn warum sollten sie etwas verändern, wenn dies Risiko und Verantwortungsübernahme ihrerseits bedeuten würde? Nicht wachsen zu wollen im Leben ist eine Denkweise, die fatal sein kann, weil sie dem grundlegenden menschlichen Bedürfnis nach Entwicklung widerspricht und die kognitive Plastizität ignoriert. Die bemerkenswerte Fähigkeit unseres Gehirns, sich anzupassen und zu verändern. Wer Wachstum ablehnt, entscheidet sich bewusst gegen die Nutzung dieser biologischen Eigenschaft und riskiert eine geistige Stagnation. So sich sagen, dass ein Leben ohne Wachstum eine Missachtung der eigenen biologischen Möglichkeiten ist. Es ist eine Entscheidung, die nicht nur die persönliche Entwicklung stoppt, sondern auch die kognitive Plastizität vernachlässigt. Wachstum ist kein Luxus, sondern eine Notwendigkeit für ein erfülltes und geistig gesundes Leben.</p>
+                    <h2>Erklärung</h2>
+<p>What fires together, wires together. Dieser Satz stammt vom kanadischen Psychologen Hebb und beschreibt, wie unser Hirn lernt (oder Gains bildet). Wenn zwei Nervenzellen (Neuronen) gleichzeitig aktiv sind, wird die Verbindung zwischen ihnen gestärkt. Je öfter sie synchron feuern, desto stärker wird die synaptische Verknüpfung. Dieses Prinzip erklärt die, oben erwähnte, neuronale Plastizität. Es ist die biologische Grundlage dafür, wie wir lernen, uns erinnern und neue Fähigkeiten erwerben. Die Kognitive Plastizität, auch neuronale Plastizität genannt, ist die Fähigkeit des Gehirns, sich durch neue Erfahrungen, Lernen und Training neu zu organisieren. Wenn wir etwas Neues lernen, bilden sich im Gehirn neue neuronale Verbindungen. Wenn wir uns an eine neue Umgebung anpassen, stärken oder schwächen sich bestehende Verbindungen. Dieses Wachstum auf neurologischer Ebene ist die Grundlage dafür, wie wir uns entwickeln, unsere Fähigkeiten verbessern und sogar nach Verletzungen wieder erholen können. Um nochmal auf Gains zu sprechen zu kommen, lässt sich neuronale Plastizität am Beispiel Koordinationssport erklären. Beim Sport, vor allem bei komplexen Bewegungen wie beim Tanzen, Turnen oder Ballsportarten, müssen viele Gehirnbereiche zusammenarbeiten. Die Synapsen, also die Verbindungsstellen zwischen den Neuronen, werden durch die ständige Koordination und das Lernen neuer Bewegungsabläufe gestärkt. Nach der hebbschen Regel festigen sich diese Verbindungen, was die Signalübertragung effizienter macht und unsere motorischen Fähigkeiten verbessert. Während wir also zu Beginn der Zumba-Klasse noch auf dem Stepper herumstolpern wie ein alkoholisierter Braunbär, werden wir von Zeit zu Zeit graziler und kontrollierter in der Bewegungsausführung. Der Braunbär mutiert zu einer Gazelle.</p>
+       <h2>Transfer</h2>
+<p>In unserem Alltag können und sollten wir also nicht nur lediglich unsere physisch sichtbaren Körperteile trainieren, sondern ebenfalls das Herzstück der Gattung Mensch: das Gehirn. Bei der eben statuierten Zumba-Klasse trainieren wir sogar beides, ein doppelter Gewinn. Wenn du kein Tanzfreund bist, dann reicht auch Gehirnjogging ohne Knoten in den Beinen. Der wirksamste Weg ist, das Gehirn ständig herauszufordern. Das bedeutet, sich bewusst etwas Neuem zu widmen. Sei es das Erlernen einer Fremdsprache, eines Musikinstruments oder einer handwerklichen Fertigkeit. Jedes Mal, wenn wir eine neue Fähigkeit erwerben, zwingen wir unser Gehirn, neue neuronale Verbindungen zu bilden. Auch körperliche Aktivität spielt eine entscheidende Rolle; regelmäßiger Sport, insbesondere Ausdauertraining, fördert die Produktion von BDNF, einem Protein, das die Bildung neuer Gehirnzellen unterstützt. Wir können unser Gehirn auch durch geistige Herausforderungen wie das Lösen von Rätseln, Puzzles oder Strategiespielen trainieren. Ein weiterer einfacher, aber effektiver Ansatz ist es, Routinen zu durchbrechen. Solche kleinen Veränderungen verhindern, dass das Gehirn in den Autopiloten schaltet. Soziale Interaktion, anregende Gespräche und die Pflege von Beziehungen sind ebenfalls essenziell, da sie das Gehirn auf vielschichtige Weise stimulieren. Nicht zu vergessen sind auch Achtsamkeit, Meditation und ausreichend Schlaf, die nicht nur die mentale Gesundheit fördern, sondern auch die Konsolidierung neuer neuronaler Verbindungen ermöglichen. Gain some brain!</p>
+    
+    <div style="text-align: center;"> <img 
+        src="pics/b6_2.jpg" 
+        alt="Kreativität"
+        style="
+            max-width: 50%; 
+            height: auto; 
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto;
+        ">
+</div>
+
+                <p><br><br>Abschlussfakt: Während das Gehirn einer Schnecke nur circa 22.000 Nervenzellen aufweist, besitzt unser menschliches Gehirn circa 86 Milliarden Nervenzellen. </p>
+            </section>
+
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dein Name | Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>

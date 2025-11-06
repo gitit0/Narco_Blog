@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warum du genau das bekommst, was du NICHT willst</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Dunkler Hintergrund und Poppins-Schriftart */
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8; 
+            background-color: #1a202c; 
+            color: #e0e0e0; 
+        }
+
+        a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+
+        /* ------------------------------------- */
+        /* Navigationsleiste (Menü oben rechts)  */
+        /* ------------------------------------- */
+        .navbar {
+            background: #1a202c; 
+            padding: 15px 5%;
+            font-size: 1.125rem;
+             font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: space-between; /* Logo links, Menü rechts */
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* HINWEIS: .h1 ist unnötig, da H1 bereits über .main-title gestylt wird */
+        /* .h1 { font-size: 30px; } */ 
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 20px;
+        }
+
+        .nav-menu a {
+            color: #ccc;
+            font-weight: 400;
+            padding: 5px 10px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: peachpuff;
+        }
+
+
+        /* ------------------------------------- */
+        /* Header Bild und Titel (Mitte, Groß)   */
+        /* ------------------------------------- */
+        .header-image-container {
+            height: 400px;
+            background: 
+                /* Überlagerung: Dunkelt das Bild ab (Schwarz, 40% Deckkraft) */
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                /* !!! Bildpfad hier anpassen !!! */
+                url('pics/b4.jpg') center center no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+             font-family: 'Poppins', sans-serif;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .main-title {
+            font-size: 4em; 
+            color: sandybrown;
+            font-family: 'Poppins', sans-serif;
+            padding: 0 20px;
+            font-weight: 900; 
+            
+        }
+
+
+        /* ------------------------------------- */
+        /* Blog Post Styling (Mittig & Blocksatz)*/
+        /* ------------------------------------- */
+        .blog-container {
+            width: auto; 
+            margin: 30px auto; /* Zentriert den Container */
+            padding: 0 20px;
+            max-width: 900px; /* HINZUFÜGT: Begrenzt die Breite für bessere Lesbarkeit */
+        }
+
+        .blog-post {
+            background: #1a202c; 
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center; /* Zentriert den gesamten Inhalt */
+        }
+
+        .post-meta {
+            color: #999;
+            margin-bottom: 30px;
+            font-style: italic;
+            border-bottom: 1px solid #3a3a3a;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .post-content {
+            /* Stellt sicher, dass der Text linksbündig oder Blocksatz ist */
+            display: block; /* ÄNDERUNG: 'inline-block' ist hier nicht nötig, 'block' ist sauberer */
+            max-width: 100%;
+            text-align: left; 
+        }
+
+        .post-content p {
+            margin-bottom: 25px;
+            /* Blocksatz */
+            text-align: justify; 
+        }
+
+        .post-content h2 {
+            color: sandybrown;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            text-align: center; 
+        }
+
+        .post-content ul {
+            margin: 20px 0 20px 20px;
+        }
+
+        /* ------------------------------------- */
+        /* Footer                                */
+        /* ------------------------------------- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a202c;
+            color: #999;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+       <img src="pics/Narco_Logo.PNG" width="70px" height="40px" alt="Firmenlogo" class="logo">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html #vision" data-page="vision" class="nav-link">Vision</a></li>
+                <li><a href="index.html #themen" data-page="themen" class="nav-link">Themen</a></li>
+                <li><a href="index.html #blog" data-page="blog" class="nav-link">Blog</a></li>
+                <li><a href="index.html #about" data-page="ablut" class="nav-link">Über mich</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="header-image-container">
+        <h1 class="main-title">Warum du genau das bekommst, was du NICHT willst</h1>
+    </div>
+
+    <main class="blog-container">
+
+        <article class="blog-post">
+
+            <p class="post-meta">
+                Veröffentlicht am <time datetime="2025-10-03">20. Oktober 2025</time> | Mind
+            </p>
+
+            <section class="post-content">
+                <h2>Ausgangslage</h2>
+                <p>Der bekannte Satz „Du bist, was du isst“ lässt sich treffend auf den Kontext der selbsterfüllenden Prophezeiungen übertragen. Man könnte auch sagen „Du verhältst dich entsprechend dem Input deiner Gedanken“. Egal, wie man es ausdrückt, dieses Phänomen betrifft die meisten von uns regelmäßig.
+Ein klassisches Beispiel ist die Toilettenpapierknappheit während der Corona-Pandemie. Die Menschen befürchteten, dass Lieferengpässe und wirtschaftliche Zusammenbrüche zu einem Mangel an Klopapier führen könnten. Diese Angst löste Panik aus, woraufhin die Bevölkerung massenhaft Toilettenpapier hortete. Die Konsequenz? Das Klopapier ging in den Supermärkten tatsächlich aus, weil die Produktion nicht auf diese plötzliche Hamsterkaufaktion ausgelegt war. Die anfängliche Befürchtung wurde zur Realität.
+Ein weiteres anschauliches Beispiel findet sich im Bereich der Angsterkrankungen. Nehmen wir beispielsweise Leistungsängste. Hier kreisen die Gedanken der Betroffenen oft ausschließlich um die Angst vor dem Versagen. Diese Angst nimmt irrationale Züge an und dominiert das gesamte Denkmuster der Person. Tritt die befürchtete Leistungseinschränkung dann tatsächlich ein, sehen die Betroffenen dies als Bestätigung ihrer eigenen Prophezeiung – ganz nach dem Motto: „Ich wusste ja sowieso, dass ich das nicht schaffe.“
+
+</p>
+                    <div style="text-align: center;"> <img 
+        src="pics/b4_1.jpg" 
+        alt="Kreativität"
+        style="
+            max-width: 25%; 
+            height: auto; 
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto;
+        ">
+</div>   
+                
+                <h2>Problem</h2>
+                <p>Besonders deutlich wird die hinderliche Wirkung dieses Denkfehlers im Kontext von Angsterkrankungen. Schnell entsteht ein Teufelskreis irrationaler Gedanken, der sich immer wieder selbst verstärkt. Was uns dabei oft entgeht, unser anfängliches Denken beeinflusst unbewusst unser Handeln. Wir prophezeien ein Ereignis nicht einfach, sondern steuern uns selbst aktiv in diese Richtung. Wenn man beispielsweise davon überzeugt ist, bei einer Prüfung zu versagen, neigt man möglicherweise dazu, weniger intensiv zu lernen oder sich stärker von Nervosität beeinflussen zu lassen, was die Wahrscheinlichkeit eines schlechten Ergebnisses tatsächlich erhöht. Die problematische Natur selbsterfüllender Prophezeiungen liegt darin, dass sie Teufelskreise erzeugen können. Negative Erwartungen führen zu negativem Verhalten, das wiederum die ursprünglichen Erwartungen bestätigt und verstärkt. Um diesen Kreislauf zu durchbrechen, ist es entscheidend, Erwartungen bewusst zu hinterfragen und sich auf Fakten statt auf unbegründete Annahmen zu konzentrieren.
+<h2>Erklärung</h2>
+<p>Der Prozess beginnt oft mit einer Annahme über eine zukünftige Situation oder das Verhalten anderer. Nehmen wir an, jemand ist davon überzeugt, dass er bei einem Vorstellungsgespräch versagen wird. Diese Überzeugung führt dazu, dass die Person möglicherweise nervöser ist, zögerlicher spricht oder weniger selbstbewusst auftritt. Diese Verhaltensweisen werden vom Interviewer wahrgenommen und könnten dessen Meinung negativ beeinflussen, was letztendlich zum Misserfolg des Bewerbers führt. Die anfängliche Prophezeiung, das Versagen, hat sich also selbst erfüllt, nicht weil sie von Anfang an wahr war, sondern weil die Person durch ihr eigenes Verhalten dazu beigetragen hat, sie Realität werden zu lassen. Dieser Teufelskreis kann sich auch in sozialen Interaktionen, Lernprozessen oder sogar an der Börse beobachten lassen. Das Entscheidende ist, dass die subjektive Erwartung zur treibenden Kraft für die objektive Realität wird.
+</p>
+   <h2>Transfer</h2>
+<p>Wen wir nun also wissen, dass der Teufel bei selbsterfüllenden Prophezeiungen in unseren Gedanken über die zukünftige Situation liegen, wie können wir der Falle aus dem Weg gehen? Wie kann man selbsterfüllende Prophezeiungen von rationalen Vermutungen über Zukünftiges unterscheiden? Spoiler: es gibt keine rationalen Vermutungen. Alles, was sich in der Zukunft befindet, befindet sich außerhalb unseres Handlungsspielraums und somit sind auch jegliche Vermutungen über diese Situation blankes Rätselraten. Es ist jedoch möglich die Vermutungen in eine rationale Richtung auszurichten, beispielsweise aufgrund von Erfahrungswissen. Wenn du beispielsweise weist, dass du für eine Prüfung nicht gelernt hast, ist die Annahme, dass du schlecht abschneiden wirst, rational und nicht selbsterfüllend – es ist eine logische Konsequenz.
+Eine selbsterfüllende Prophezeiung hingegen entsteht, wenn eine Annahme ohne ausreichende Grundlage getroffen wird und diese Annahme dann durch das eigene Verhalten zur Realität wird. Das Erkennen des Unterschieds liegt im Ursprung der Erwartung. Entstammt sie einer objektiven Bewertung der Realität oder ist sie eher ein Ausdruck innerer Ängste oder unbegründeter Überzeugungen, die dein Handeln beeinflussen? Hinterfrage stets die Grundlage der Überzeugungen und suche nach objekten Beweisen, um zwischen beiden zu unterscheiden. Als Erstes musst du dir überhaupt bewusst werden, dass du in einer selbsterfüllenden Prophezeiung steckst. Frage dich: Welche negativen Erwartungen habe ich in bestimmten Situationen? Wie beeinflussen diese Erwartungen mein Denken und Handeln? Gibt es vielleicht sogar Wiederholungsmuster, bei denen deine Befürchtungen immer wieder eintreten? Sobald du eine Prophezeiung identifiziert hast, ist es super wichtig, ihre Grundlage kritisch zu prüfen. Basiert deine Annahme wirklich auf objektiven Fakten oder früheren Erfahrungen, oder ist sie eher ein Ausdruck von Ängsten, Unsicherheiten oder sogar von Verallgemeinerungen aus Einzelerlebnissen? Suche aktiv nach Gegenbeweisen. Gab es Situationen, in denen deine Erwartung nicht eingetreten ist? Versuche, die Situation aus einer anderen Perspektive zu betrachten. Was würde eine neutrale Person denken? Ist deine Erwartung wirklich realistisch oder eher übertrieben negativ? Abgesehen von den Gedanken solltest du auch ins Handeln kommen. Konzentriere dich auf das, was du kontrollieren kannst. Also auf deine eigenen Anstrengungen und deinen Beitrag, anstatt dich von äußeren Umständen oder unkontrollierbaren Faktoren lähmen zu lassen.
+</p>   
+  
+
+            </section>
+            <div style="text-align: center;"> <img 
+        src="pics/b4_2.jpg" 
+        alt="Kreativität"
+        style="
+            max-width: 50%; 
+            height: auto; 
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto;
+        ">
+</div>   
+
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dein Name | Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wie Kommunikation auf 3 Ebenen (verun)glücken kann </title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            /* Dunkler Hintergrund und Poppins-Schriftart */
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8; 
+            background-color: #1a202c; 
+            color: #e0e0e0; 
+        }
+
+        a {
+            color: #00bfff;
+            text-decoration: none;
+        }
+
+        /* ------------------------------------- */
+        /* Navigationsleiste (Menü oben rechts)  */
+        /* ------------------------------------- */
+        .navbar {
+            background: #1a202c; 
+            padding: 15px 5%;
+            font-size: 1.125rem;
+             font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: space-between; /* Logo links, Menü rechts */
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* HINWEIS: .h1 ist unnötig, da H1 bereits über .main-title gestylt wird */
+        /* .h1 { font-size: 30px; } */ 
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 20px;
+        }
+
+        .nav-menu a {
+            color: #ccc;
+            font-weight: 400;
+            padding: 5px 10px;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: bisque;
+        }
+
+
+        /* ------------------------------------- */
+        /* Header Bild und Titel (Mitte, Groß)   */
+        /* ------------------------------------- */
+        .header-image-container {
+            height: 400px;
+            background: 
+                /* Überlagerung: Dunkelt das Bild ab (Schwarz, 40% Deckkraft) */
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                /* !!! Bildpfad hier anpassen !!! */
+                url('pics/b5.jpg') center center no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+             font-family: 'Poppins', sans-serif;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .main-title {
+            font-size: 4em; 
+            color: bisque;
+            font-family: 'Poppins', sans-serif;
+            padding: 0 20px;
+            font-weight: 900; 
+            
+        }
+
+
+        /* ------------------------------------- */
+        /* Blog Post Styling (Mittig & Blocksatz)*/
+        /* ------------------------------------- */
+        .blog-container {
+            width: auto; 
+            margin: 30px auto; /* Zentriert den Container */
+            padding: 0 20px;
+            max-width: 900px; /* HINZUFÜGT: Begrenzt die Breite für bessere Lesbarkeit */
+        }
+
+        .blog-post {
+            background: #1a202c; 
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center; /* Zentriert den gesamten Inhalt */
+        }
+
+        .post-meta {
+            color: #999;
+            margin-bottom: 30px;
+            font-style: italic;
+            border-bottom: 1px solid #3a3a3a;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .post-content {
+            /* Stellt sicher, dass der Text linksbündig oder Blocksatz ist */
+            display: block; /* ÄNDERUNG: 'inline-block' ist hier nicht nötig, 'block' ist sauberer */
+            max-width: 100%;
+            text-align: left; 
+        }
+
+        .post-content p {
+            margin-bottom: 25px;
+            /* Blocksatz */
+            text-align: justify; 
+        }
+
+        .post-content h2 {
+            color: bisque;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            text-align: center; 
+        }
+
+        .post-content ul {
+            margin: 20px 0 20px 20px;
+        }
+
+        /* ------------------------------------- */
+        /* Footer                                */
+        /* ------------------------------------- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1a202c;
+            color: #999;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+       <img src="pics/Narco_Logo.PNG" width="70px" height="40px" alt="Firmenlogo" class="logo">
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html #vision" data-page="vision" class="nav-link">Vision</a></li>
+                <li><a href="index.html #themen" data-page="themen" class="nav-link">Themen</a></li>
+                <li><a href="index.html #blog" data-page="blog" class="nav-link">Blog</a></li>
+                <li><a href="index.html #about" data-page="ablut" class="nav-link">Über mich</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="header-image-container">
+        <h1 class="main-title">Wie Kommunikation auf 3 Ebenen (verun)glücken kann </h1>
+    </div>
+
+    <main class="blog-container">
+
+        <article class="blog-post">
+
+            <p class="post-meta">
+                Veröffentlicht am <time datetime="2025-10-03">15. Oktober 2025</time> | Rhetorik
+            </p>
+
+            <section class="post-content">
+                <h2>Ausgangslage</h2>
+                <p>Jedes unserer täglichen Gespräche ist ein Miteinander, das uns mal leicht, mal schwerfällt. Ob wir uns mit jemandem unterhalten, weil es die Situation erfordert, oder weil wir es einfach genießen. Wir alle kennen die Situationen, in denen wir uns aus Anstand durch eine Unterhaltung manövrieren. Doch mit einem Lächeln, Nicken und in die Augen schauen vorgetäuschtes Interesse zu zeigen, ist eine Kommunikationsstrategie, die längst ausgedient hat. Stell dir vor, Karen erzählt zum fünfzigsten Mal von ihrem Tupperabend. Statt ein Lächeln vorzutäuschen oder passiv-aggressiv mit den Augen zu rollen, kannst du offen und respektvoll kommunizieren: „Karen, ich schätze es wirklich, dass du mir einen Einblick in dein Leben gibst, aber lass uns doch über etwas anderes sprechen.“ Kommunikation verbindet uns auf vielfältige Weise, doch sie birgt auch das Potenzial, unsere Beziehungen unabsichtlich zu destabilisieren oder gar zu zerstören. Sie ist eine Kunst, die wir beherrschen müssen, um echte und ehrliche Verbindungen aufzubauen. Im Folgenden betrachten wir die drei Ebenen der Kommunikation, um diese Kunst besser zu verstehen und anzuwenden.
+</p>
+                    <div style="text-align: center;"> <img 
+        src="pics/b5_1.jpg" 
+        alt="Kreativität"
+        style="
+            max-width: 25%; 
+            height: auto; 
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto;
+        ">
+</div>   
+                
+                <h2>Problem</h2>
+                <p>Wenn wir kommunizieren, fällt vielen von uns ein Part besonders schwer: das Zuhören. So banal es auch klingen mag, die Kunst des Nicht-Redens ist eine knifflige Kür in der zwischenmenschlichen Kommunikation. Während uns unser Gegenüber sein Leben offenbart, startet bei schlechten Zuhörern das Gedankenkarussell. Eifrig wird überlegt, ob man selbst bereits so eine Situation erlebt hat, wie man am besten mit einer eigenen Geschichte anknüpfen kann oder welchen Topper man darauf setzen kann.
+Dabei geht der eigentliche Inhalt der Erzählung völlig verloren. Wir sind nicht mehr in einem echten Austausch, sondern in einem Wettstreit der besten Anekdoten. Die Botschaft des anderen wird zum bloßen Stichwort für unsere eigene Performance degradiert. Echtes Zuhören bedeutet aber, dem anderen bedingungslos Raum zu geben. Es heißt, die eigenen Gedanken bewusst zurückzustellen, die Neugier auf die Welt des anderen zu richten und wirklich zu verstehen, was ihn bewegt. Wer zuhört, ohne die nächste Antwort zu planen, schafft eine tiefe Verbindung und signalisiert: Ich bin hier, ganz bei dir. Diese Art von Aufmerksamkeit ist ein seltenes und wertvolles Geschenk in unserer schnelllebigen Zeit.
+</p>
+                    <h2>Erklärung</h2>
+<p>Wie haben wir nur verlernt zuzuhören? Durchschnittlich verbringen wir 2.5 Stunden täglich auf Social Media und unterziehen uns einer unendlichen Reizüberflutung. Abgesehen von den Medien hetzen wir von Termin zu Termin, versuchen Privatleben und Beruf auszubalancieren und dabei unseren Hobbies nachzukommen. Wir leben in einer Welt ohne Pausenknopf und vergessen dabei oft auf uns selbst zu achten. Wer schneller, schlauer, schöner ist gewinnt. Bereits früh lernen wir, dass wir uns durchsetzen müssen, uns von der breiten Masse abzeichnen müssen, um erfolgreich zu werden. Wer lauter schreit wird eher gehört – de facto. Aber macht es nicht eigentlich mehr Sinn, sein Gegenüber zu hören, zu fühlen und letztendlich zu verstehen? Wie können wir jemanden überzeugen und dazu bringen uns einen Gefallen zu tun, wenn wir die Person nicht lesen können? Kann so überhaupt eine erfolgreiche Konversation gelingen? I doubt it. Neben der Relevanz des Zuhörens sollte man verstehen, dass Kommunikation auf drei Ebenen stattfinden kann. Die Inhaltsebene ist die offensichtlichste. Sie umfasst die reinen Fakten, Daten und Informationen, die wir austauschen. Es ist das Was der Kommunikation. Ein Beispiel hierfür wäre ein Kollege, der sagt: "Das Meeting beginnt um 10 Uhr." Die Nachricht ist klar und direkt, sie liefert eine einfache Information. Die Prozessebene beschreibt, wie die Kommunikation abläuft. Es geht um die Struktur, den Ablauf und die Dynamik des Gesprächs – das Wie. Ein Beispiel dafür ist, wenn du in einem Meeting merkst, dass alle durcheinander reden. Die Prozessebene wäre dann, dies zu thematisieren, indem du sagst: "Lasst uns nacheinander sprechen, damit wir uns besser verstehen." Es geht hier nicht um den Inhalt der Diskussion, sondern um die Regeln und den Rahmen, innerhalb dessen die Diskussion stattfindet. Die Beziehungsebene ist die subtilste und oft entscheidendste Ebene. Sie drückt aus, wie wir zueinander stehen und wie wir uns gegenseitig wahrnehmen. Sie vermittelt Gefühle, Erwartungen und die Wertschätzung füreinander – das Wer und Wie wie zueinander stehen. Ein und dieselbe Aussage kann auf dieser Ebene völlig unterschiedlich wirken, je nachdem, wer sie sagt und in welchem Ton. Ein Beispiel: Wenn dein Chef sagt: "Das Meeting beginnt um 10 Uhr," könnte das als Anweisung verstanden werden. Wenn jedoch derselbe Satz von einem Freund kommt, der sich für ein Treffen verspätet, könnte es als eine Entschuldigung wahrgenommen werden. Die Beziehungsebene färbt den Inhalt und bestimmt, wie die Botschaft emotional aufgenommen wird. Wenn wir im Alltag verstehen, auf welcher Ebene gesprochen wird, können wir Missverständnisse effektiv vermeiden. Denn leider scheitern Gespräche oft nicht am Inhalt, sondern an einem missinterpretierten Prozess oder an einer unklaren Beziehung der Gesprächsteilnehmenden.</p>
+   <h2>Transfer</h2>
+<p>In Alltagsgesprächen bemerkst du die Prozessebene, wenn die Struktur der Kommunikation selbst im Fokus steht. Das passiert, wenn das Gespräch stockt, unproduktiv wird oder ein Ungleichgewicht herrscht. Beispiele sind, wenn jemand immer wieder unterbrochen wird, das Thema abrupt gewechselt wird oder die Gesprächszeit sehr ungleich verteilt ist. Wenn du merkst, dass das Gespräch nicht vorankommt, kannst du die Prozessebene ansprechen. Um herauszufinden, ob ihr auf einer Informations- oder Beziehungsebene redet, stell dir die Frage: Geht es dem Sprecher wirklich nur um die Information, die er teilt, oder schwingt eine persönliche Botschaft mit? Wenn ein Kollege sagt: „Du hast den Bericht nicht pünktlich abgegeben“, kann das eine einfache Feststellung sein (Inhaltsebene). Aber wenn er das mit einem genervten Unterton sagt, sendet er eine Botschaft über eure Beziehung: „Ich bin unzufrieden mit deiner Leistung.“ (Beziehungsebene). Um das zu klären, könntest du fragen, ob sich dein Gegenüber auf den Bericht bezieht oder ob es anderweitig noch etwas gibt, das ihn stört. Mit dem Wissen in Gesprächen zuzuhören und die Gesprächsebene zu verstehen, ist uns im Alltag um einiges geholfen. Wenn wir mit unserem Gegenüber reden wollen, dann können wir das nun auf einer professionellen Ebene und wenn nicht - nun ja dann kommunizieren wir das im besten Fall frühzeitig. Sorry Karen!</p>   
+   <div style="text-align: center;"> <img 
+        src="pics/b5_2.jpg" 
+        alt="Kreativität"
+        style="
+            max-width: 50%; 
+            height: auto; 
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto;
+        ">
+</div>
+
+            </section>
+
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Dein Name | Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
