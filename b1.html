@@ -88,6 +88,29 @@
             text-align: center;
             margin-bottom: 40px;
         }
+        /* Ausgeblendete Navigationsliste für mobile Ansicht */
+.nav-list-mobile {
+    display: none; /* hidden */
+    flex-direction: column; /* flex-col */
+    align-items: center;
+    position: absolute;
+    top: 100%; /* top-full */
+    right: 0; /* right-0 */
+    width: 100%; /* w-full */
+    background-color: rgba(0, 0, 0, 0.9); /* bg-black bg-opacity-90 */
+    padding-top: 1rem; /* py-4 */
+    padding-bottom: 1rem; /* py-4 */
+}
+
+.nav-list-mobile.active {
+    display: flex; /* Zeigt das Menü an, wenn aktiv */
+}
+
+/* Fade-in Animation für Seitenwechsel */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
         /* ------------------------------------------------ */
 /* Basis-Einstellungen für große Bildschirme (Optional) */
@@ -204,6 +227,14 @@
                 <li><a href="index.html#themen" data-page="themen" class="nav-link">Themen</a></li>
                 <li><a href="index.html#blog" data-page="blog" class="nav-link">Blog</a></li>
                 <li><a href="index.html#about" data-page="ablut" class="nav-link">Über mich</a></li>
+            </ul>
+              <!-- Mobile Navigation (standardmäßig ausgeblendet) -->
+            <ul class="nav-list-mobile" id="nav-list-mobile">
+                <li><a href="#home" data-page="home" class="nav-link">Start</a></li>
+                <li><a href="#vision" data-page="vision" class="nav-link">Vision</a></li>
+                <li><a href="#themen" data-page="themen" class="nav-link">Themen</a></li>
+                <li><a href="#blog" data-page="blog" class="nav-link">Blog</a></li>
+                <li><a href="#about" data-page="about" class="nav-link">Über mich</a></li>
             </ul>
         </nav>
     </header>

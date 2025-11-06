@@ -209,3 +209,18 @@ footer {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+/* Media Query für Bildschirme kleiner oder gleich 600px */
+@media (max-width: 600px) {
+    
+    /* Ziel-Selektor: Alle <h2> mit der Klasse .section-title */
+    .section-title {
+        /* Wähle eine Größe, die gut auf dem Handy passt */
+        font-size: 1.8em; 
+        /* Oder eine feste Pixelgröße, z.B. 28px */
+        /* font-size: 28px; */
+        
+        /* Optional: Falls der Text noch über den Rand ragt */
+        word-wrap: break-word; 
+        overflow-wrap: break-word;
+    }
+}
