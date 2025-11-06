@@ -40,6 +40,13 @@
             align-items: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
         }
+        @media (max-width: 768px) {
+    
+    /* 1. Desktop-Menü ausblenden, wenn das Hamburger-Menü erscheint */
+    .nav-menu {
+        display: none !important; 
+    }
+}
 
         /* HINWEIS: .h1 ist unnötig, da H1 bereits über .main-title gestylt wird */
         /* .h1 { font-size: 30px; } */ 
@@ -90,16 +97,45 @@
         }
         /* Ausgeblendete Navigationsliste für mobile Ansicht */
 .nav-list-mobile {
-    display: none; /* hidden */
-    flex-direction: column; /* flex-col */
+    display: none; 
+    flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 100%; /* top-full */
-    right: 0; /* right-0 */
-    width: 100%; /* w-full */
-    background-color: rgba(0, 0, 0, 0.9); /* bg-black bg-opacity-90 */
-    padding-top: 1rem; /* py-4 */
-    padding-bottom: 1rem; /* py-4 */
+
+    @media (max-width: 768px) {
+    
+    /* 2. Hamburger-Icon einblenden */
+    .nav-list-mobile {
+        display: block !important; /* Oder 'flex', je nach Icon-Typ */
+    }
+}
+    
+    /* NEU: Fixiere das Menü relativ zum Browserfenster (Viewport) */
+    position: fixed; 
+    
+    /* NEU: Starte das Menü direkt am oberen Rand des Bildschirms */
+    top: 0; 
+    
+    /* Stelle sicher, dass das Menü die gesamte Höhe des Bildschirms einnimmt */
+    height: 100vh; /* 100% der Viewport Height */
+    
+    left: 0; 
+    width: 100%; 
+    
+    /* Wichtig, damit es über allen anderen Inhalten liegt */
+    z-index: 999; 
+    
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-top: 1rem; 
+    padding-bottom: 1rem;
+}
+
+
+
+/* Beispiel für das Eltern-Element deines .nav-list-mobile */
+.main-header { 
+    position: relative; /* MUSS gesetzt sein, damit sich das absolute Menü korrekt bezieht! */
+    width: 100%;
+    /* ... weitere Styles ... */
 }
 
 .nav-list-mobile.active {

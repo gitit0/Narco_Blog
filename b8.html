@@ -97,7 +97,24 @@
             font-weight: 900; 
             
         }
-
+@media (max-width: 600px) {
+    
+    .main-title {
+        /* 1. Schriftgröße radikal reduzieren */
+        /* Reduziere die Größe auf einen Wert, der umbricht und passt */
+        font-size: 1.5em; /* Oder 24px, je nachdem, was passt */
+        line-height: 1.1; /* Engerer Zeilenabstand für bessere Kompaktheit */
+        
+        /* 2. Horizontalen Überlauf verhindern (falls er an den Rändern hängt) */
+        /* Füge etwas horizontalen Innenabstand hinzu (optional) */
+        padding: 0 15px; 
+        
+        /* 3. Sicherstellen, dass er sich an die Elternbreite hält */
+        /* Falls der Titel über das Bild ragt, liegt es oft daran, dass der Container des Bildes nicht 100% der Breite einnimmt. */
+        width: 100%; 
+        box-sizing: border-box; 
+    }
+}
 
         /* ------------------------------------- */
         /* Blog Post Styling (Mittig & Blocksatz)*/
