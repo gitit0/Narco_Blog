@@ -252,13 +252,13 @@
             </ul>
         </nav>
         
-        <ul class="nav-list-mobile" id="nav-list-mobile">
-            <li><a href="#home" data-page="home" class="nav-link">Start</a></li>
-            <li><a href="#vision" data-page="vision" class="nav-link">Vision</a></li>
-            <li><a href="#themen" data-page="themen" class="nav-link">Themen</a></li>
-            <li><a href="#blog" data-page="blog" class="nav-link">Blog</a></li>
-            <li><a href="#about" data-page="about" class="nav-link">Über mich</a></li>
-        </ul>
+     <ul class="nav-list-mobile" id="nav-list-mobile">
+    <li><a href="index.html" data-page="home" class="nav-link">Start</a></li>
+    <li><a href="index.html#vision" data-page="vision" class="nav-link">Vision</a></li>
+    <li><a href="index.html#themen" data-page="themen" class="nav-link">Themen</a></li>
+    <li><a href="index.html#blog" data-page="blog" class="nav-link">Blog</a></li>
+    <li><a href="index.html#about" data-page="about" class="nav-link">Über mich</a></li>
+</ul>
         
     </header>
     <div class="header-image-container">
@@ -298,11 +298,21 @@ Der Prozess beginnt im Gehirn, genauer gesagt im Hypothalamus, der die Hypothala
         </article>
         
     </main>
-    <script>
-        document.getElementById('hamburger-toggle').addEventListener('click', function() {
+   <script>
+    // Funktion zum Öffnen/Schließen des Menüs beim Klick auf das Hamburger-Icon
+    document.getElementById('hamburger-toggle').addEventListener('click', function() {
+        var mobileMenu = document.getElementById('nav-list-mobile');
+        mobileMenu.classList.toggle('active');
+    });
+
+    // Funktion zum Schließen des Menüs nach dem Klick auf einen Link
+    document.querySelectorAll('.nav-list-mobile a').forEach(item => {
+        item.addEventListener('click', () => {
             var mobileMenu = document.getElementById('nav-list-mobile');
-            mobileMenu.classList.toggle('active');
+            // Menü schließen
+            mobileMenu.classList.remove('active'); 
         });
-    </script>
+    });
+</script>
 </body>
 </html>
