@@ -96,37 +96,57 @@
             margin-bottom: 40px;
         }
         /* Ausgeblendete Navigationsliste für mobile Ansicht */
+/* ------------------------------------- */
+/* NEU: CSS für das Hamburger-Icon */
+/* ------------------------------------- */
+.hamburger-toggle {
+    display: none; /* Standardmäßig auf Desktop ausgeblendet */
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+/* ------------------------------------- */
+/* KORRIGIERT: Mobil-Menü-Liste (position: fixed ist gut) */
+/* ------------------------------------- */
 .nav-list-mobile {
-    display: none; 
+    display: none; /* Standardmäßig ausgeblendet */
     flex-direction: column;
     align-items: center;
-
-    @media (max-width: 768px) {
     
-    /* 2. Hamburger-Icon einblenden */
-    .nav-list-mobile {
-        display: block !important; /* Oder 'flex', je nach Icon-Typ */
-    }
-}
-    
-    /* NEU: Fixiere das Menü relativ zum Browserfenster (Viewport) */
-    position: fixed; 
-    
-    /* NEU: Starte das Menü direkt am oberen Rand des Bildschirms */
+    position: fixed; /* Richtig, um es am Viewport zu fixieren */
     top: 0; 
-    
-    /* Stelle sicher, dass das Menü die gesamte Höhe des Bildschirms einnimmt */
-    height: 100vh; /* 100% der Viewport Height */
-    
+    height: 100vh;
     left: 0; 
     width: 100%; 
-    
-    /* Wichtig, damit es über allen anderen Inhalten liegt */
     z-index: 999; 
-    
     background-color: rgba(0, 0, 0, 0.9);
-    padding-top: 1rem; 
+    padding-top: 60px; /* Platz für den Header lassen */
     padding-bottom: 1rem;
+}
+
+
+/* ------------------------------------- */
+/* MEDIA QUERY: Sichtbarkeit regeln */
+/* ------------------------------------- */
+@media (max-width: 768px) {
+    
+    /* 1. Desktop-Menü verstecken */
+    .nav-menu {
+        display: none !important; 
+    }
+    
+    /* 2. Hamburger-Icon anzeigen */
+    .hamburger-toggle {
+        display: block; 
+    }
+    
+    /* *HINWEIS*: .nav-list-mobile bleibt 'display: none', 
+       bis es durch JavaScript auf .active gesetzt wird. */
 }
 
 
@@ -256,7 +276,10 @@
 
     <header class="navbar">
        <img src="pics/Narco_Logo.PNG" width="70px" height="40px" alt="Firmenlogo" class="logo">
-        <nav class="nav-menu">
+        <button class="hamburger-toggle" id="hamburger-toggle">
+        &#9776; </button>
+       
+       <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#vision" data-page="vision" class="nav-link">Vision</a></li>
@@ -313,5 +336,11 @@ Der Prozess beginnt im Gehirn, genauer gesagt im Hypothalamus, der die Hypothala
         
 
     </main>
-
-<?php include 'footer.html'; ?>
+    <script>
+    document.getElementById('hamburger-toggle').addEventListener('click', function() {
+        var mobileMenu = document.getElementById('nav-list-mobile');
+        mobileMenu.classList.toggle('active');
+    });
+</script>
+</body>
+</html>
